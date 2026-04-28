@@ -1,0 +1,114 @@
+================================================================================
+Simple MATCH with RETURN
+================================================================================
+
+MATCH (n:Person)
+RETURN n.name
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (program_activity
+    (transaction_activity
+      (procedure_specification
+        (procedure_body
+          (statement_block
+            (statement
+              (linear_data_modifying_statement
+                (ambient_linear_data_modifying_statement
+                  (ambient_linear_data_modifying_statement_body
+                    (simple_linear_data_accessing_statement
+                      (simple_data_accessing_statement
+                        (simple_query_statement
+                          (primitive_query_statement
+                            (match_statement
+                              (simple_match_statement
+                                (graph_pattern_binding_table
+                                  (graph_pattern
+                                    (path_pattern_list
+                                      (path_pattern
+                                        (path_pattern_expression
+                                          (path_term
+                                            (path_factor
+                                              (path_primary
+                                                (element_pattern
+                                                  (node_pattern
+                                                    (element_pattern_filler
+                                                      (element_variable_declaration
+                                                        (element_variable
+                                                          (binding_variable
+                                                            (regular_identifier
+                                                              (regular_identifier_token)))))
+                                                      (is_label_expression
+                                                        (is_or_colon)
+                                                        (label_expression
+                                                          (label_name
+                                                            (identifier
+                                                              (regular_identifier
+                                                                (regular_identifier_token)))))))))))))))))))))))
+                    (primitive_result_statement
+                      (return_statement
+                        (return_statement_body
+                          (return_item_list
+                            (return_item
+                              (value_expression
+                                (value_expression_primary
+                                  (value_expression_primary
+                                    (binding_variable_reference
+                                      (binding_variable
+                                        (regular_identifier
+                                          (regular_identifier_token)))))
+                                  (property_name
+                                    (identifier
+                                      (regular_identifier
+                                        (regular_identifier_token)))))))))))))))))))))
+
+================================================================================
+INSERT node
+================================================================================
+
+INSERT (:Person {name: 'Alice'})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (program_activity
+    (transaction_activity
+      (procedure_specification
+        (procedure_body
+          (statement_block
+            (statement
+              (linear_data_modifying_statement
+                (ambient_linear_data_modifying_statement
+                  (ambient_linear_data_modifying_statement_body
+                    (simple_linear_data_accessing_statement
+                      (simple_data_accessing_statement
+                        (simple_data_modifying_statement
+                          (primitive_data_modifying_statement
+                            (insert_statement
+                              (insert_graph_pattern
+                                (insert_path_pattern_list
+                                  (insert_path_pattern
+                                    (insert_node_pattern
+                                      (insert_element_pattern_filler
+                                        (label_and_property_set_specification
+                                          (is_or_colon)
+                                          (label_set_specification
+                                            (label_name
+                                              (identifier
+                                                (regular_identifier
+                                                  (regular_identifier_token)))))
+                                          (element_property_specification
+                                            (property_key_value_pair_list
+                                              (property_key_value_pair
+                                                (property_name
+                                                  (identifier
+                                                    (regular_identifier
+                                                      (regular_identifier_token))))
+                                                (value_expression
+                                                  (value_expression_primary
+                                                    (unsigned_value_specification
+                                                      (unsigned_literal
+                                                        (general_literal
+                                                          (character_string_literal
+                                                            (single_quoted_character_sequence)))))))))))))))))))))))))))))))
